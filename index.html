@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="iiff.js"></script>
+  <style>
+    .stdform{
+      display: none;
+      margin: 1rem;
+      padding: 2rem;
+    }
+    table{
+      padding: 1rem;
+      border: 2px solid black;
+    }
+    button{
+      margin: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <script>
+    function submit(){
+      var name = document.getElementById("name").value;
+      var Address = document.getElementById("Add").value;
+      var mobile = document.getElementById("mob").value;
+      var student = new studentmodule.student();
+      student.setName(name);
+      student.setAddress(Address);
+      student.setMobile(mobile);
+     
+      document.getElementById("name1").innerHTML= student.getName();
+      document.getElementById("Add1").innerHTML= student.getAddress();
+      document.getElementById("mob1").innerHTML= student.getMobile();
+      document.getElementById("stdform1").style.display= "block";
+      
+
+    }
+  </script>
+  <table>
+    <tr>
+    <td>name : &emsp;</td> 
+    <td><input type="text" id="name"></td>
+  </tr>
+  <tr>
+    <td>Address : &emsp; </td>
+    <td><textarea name="Address" id="Add" cols="21" rows="8"></textarea></td>
+  </tr>
+  <tr>
+    <td>mobile : &emsp; </td>
+    <td><input type="text" id="mob"></td>
+  </tr>
+  </table>
+  <button onclick="submit()">submit</button>
+  
+  <div class="stdform" id="stdform1" >
+    <table>
+      <tr>
+      <td>name :</td> 
+      <td><p id="name1"></p></td>
+    </tr>
+    <tr>
+      <td>Address :</td>
+      <td><p id="Add1"></p></td>
+    </tr>
+    <tr>
+      <td>mobile :</td>
+      <td><p id="mob1"></p></td>
+    </tr>
+    </table>
+   
+   
+
+  </div>
+
+  
+
+</body>
+</html>
